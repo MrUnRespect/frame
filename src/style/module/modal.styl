@@ -1,0 +1,137 @@
+label.custom-modal-setting {
+  padding: 0 10px;
+  box-sizing: border-box;
+  display: block;
+  margin: 10px 20px;
+  display: flex;
+  align-items: start;
+
+  span {
+    width: 140px;
+    font-size: 16px;
+
+    i {
+      display: block;
+      font-size: 12px;
+      line-height: 10px;
+      color: #8bc34a;
+    }
+  }
+
+  &>input {
+    flex: 1;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0 10px;
+  }
+
+  .CodeMirror {
+    border: 1px solid #ccc;
+    height: auto;
+    flex: 1;
+  }
+
+  .CodeMirror-scroll {
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+}
+
+button.custom-modal-setting-button {
+  outline: none;
+  width: 100%;
+  font-size: 12px;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 44px;
+  height: 44px;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 1px; */
+  color: rgb(44, 62, 80);
+  font: inherit;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #fff - 5%;
+  }
+}
+
+.custom-modal-header {
+  margin: 5px 0;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.custom-modal-list {
+  padding: 20px 10px;
+  margin: 0 20px;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  li {
+    list-style: none;
+    margin: 10px 0;
+    color: white;
+    position: relative;
+
+    &.current:before {
+      content: '';
+      position: absolute;
+    }
+
+    a {
+      background: alpha(baseColor, 0.5);
+      padding: 2px 10px;
+      text-decoration: none;
+      color: baseColor - 20%;
+      border: 1px solid transparent;
+
+      &:hover {
+        background: alpha(baseColor, 0.2);
+        border-color: baseColor;
+      }
+    }
+  }
+
+  &.preview {
+    a {
+      overflow: hidden;
+      position: relative;
+      transition: border-right-width 0.2s ease;
+
+      span {
+        position: absolute;
+        right: 0;
+        color: white;
+        padding: 0 10px;
+        transform: translateX(100%);
+        transition: opacity 0.2s ease;
+        opacity: 0;
+        top: 1px;
+      }
+
+      &:hover {
+        span {
+          opacity: 1;
+        }
+
+        border-right-width: 50px;
+      }
+    }
+  }
+}
